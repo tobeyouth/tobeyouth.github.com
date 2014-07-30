@@ -5,8 +5,6 @@ description: ""
 category: 
 tags: [javascript,components]
 ---
-{% include JB/setup %}
-
 ----
 
 ###起因

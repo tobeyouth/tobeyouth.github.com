@@ -5,7 +5,7 @@ description: "how to get html,css,js,image ?"
 category: 
 tags: [html,css,js,image,speed]
 ---
-{% include JB/setup %}
+
 
 
 最近转来专门做无线项目，由于移动设备的网速问题，所以身为一个前端工程师，会更加关注资源的缓存和加载速度。

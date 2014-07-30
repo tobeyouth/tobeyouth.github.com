@@ -5,8 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
-
 ---
 
 ###Hi world!

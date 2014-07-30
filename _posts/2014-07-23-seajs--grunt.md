@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [seajs,grunt,javascript]
 ---
-{% include JB/setup %}
 
 在前端开发的过程中，我们需要面对这么几个问题：
 

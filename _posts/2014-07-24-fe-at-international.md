@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [international,国际化]
 ---
-{% include JB/setup %}
 
 在从事国际化的前端开发过程中，我们会碰到很多在中文环境下意想不到的问题。如何能更快捷的开发出可以在不同语言环境下通用的前端模块和组件，成了一个值得研究的问题。
 

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [qa,bug]
 ---
-{% include JB/setup %}
 
 ----
 

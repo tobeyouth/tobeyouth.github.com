@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: ['XML','数据']
 ---
-{% include JB/setup %}
 
 
 `XML Schema`是一种通过XML实现的数据格式约定，可以通过schema来约束数据的格式，应该算是类似各种编程语言中`interface`的概念。
