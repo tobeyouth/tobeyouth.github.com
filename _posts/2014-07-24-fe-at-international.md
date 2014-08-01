@@ -18,6 +18,8 @@ tags: [international,国际化]
 
 使用`flex`或者`box`布局的话，可以使用`flow-flow:row-reverse`或者`box-direction:reverse`来对元素进行倒序排列。
 
+另外，在一些使用`inline-block`方式布局的地方，可以使用`direction:rtl/ltr`属性来定制排列的方向，效果和使用`reverse`是一样的。
+
 在目前的项目中，会打包一个`layout.css`，写入一些常用的布局用样式，在需要进行布局的元素上，直接写入class；然后还会再定义一个翻转用的css文件，主要写入`reverse`这些属性。
 
 其次，在不得不使用`float`的地方，重新定义`fl`和`fr`的方向就可以了。

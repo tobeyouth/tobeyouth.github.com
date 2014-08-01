@@ -102,7 +102,12 @@ tags: [touch,javascript]
 
 在不想用户进行操作的时候，可以通过`click`事件绑定判断keycode同时`e.prenvetDefault()`来禁止右键的默认行为。
 
-在移动端，类似的功能是通过长按来实现的。
+在移动端，类似的功能是通过长按来实现的。在`zepto`中封装了`longTap`事件，可以用来完成这个功能。另外，在很多时候，如果不想触发这个交互动作，可以在页面css中加上这些：
+
+		-webkit-user-select:none; // 禁止用户选择文本
+		-webkit-touch-callout:none;// 禁止长按出现菜单
+		
+	
 
 
 
