@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "strlen和md_strlen"
+title: "strlen和mb_strlen"
 modified: 2014-08-21 12:13:48 +0800
 tags: [php]
 ---
@@ -8,6 +8,6 @@ tags: [php]
 
 仔细看了一下手册之后发现，原来`strlen`这个函数对待在`UTF-8`编码中的非*字母*类字符，长度都定义为3，所以会出现泰语字符串的长度，使用这个函数得出的结果是实际长度的3倍。
 
-如果要避免这个问题，应该使用`md_strlen`，就可以了。
+如果要避免这个问题，应该使用`mb_strlen`，就可以了。
 
-看来在非英文的环境中，还是多使用`md_strlen`比较保险：）
+看来在非英文的环境中，还是多使用`mb_strlen`比较保险：）
