@@ -27,6 +27,7 @@ nodejs社区贡献了很多`transforms`模块，可以在这里看到：[transfo
 - 项目地址：[browserify](http://browserify.org/)
 - 用法介绍：[handbook](https://github.com/substack/browserify-handbook)
 - 浏览器支持情况：
+
 ![image](http://browserify.org/images/testling_badge.png)
 
 ###配置
