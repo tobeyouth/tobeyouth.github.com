@@ -58,3 +58,14 @@
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top:10px;
+}
+h1,h2,h3 {
+    margin-bottom:10px;
+}
+h4,h5,h6 {
+    margin-bottom:5px;
+}
