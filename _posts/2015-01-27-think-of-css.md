@@ -8,41 +8,41 @@ tags: [css,front-end,framework]
 
 ###css风格
 
-- OOCSS:[Object Oriented Css](https://github.com/stubbornella/oocss/wiki)
+##### OOCSS:[Object Oriented Css](https://github.com/stubbornella/oocss/wiki)
+
 1. Separate structure and skin
 2. Separate container and content
 3. Avoid the descendent selector (i.e. don't use .sidebar h3)
 4. Avoid IDs as styling hooks
 5. Avoid attaching classes to elements in your stylesheet (i.e. don't do div.header or h1.title)
 
-- SMACSS:[Scalable and Modular Architecture for Css](https://smacss.com/)
-	1. Base (element only selector)
-	2. Layout (id selector + layout class)
-	3. Module (class only selector + descendant selector)
-	4. State (class selector)
-	5. Theme (override below rules)
-	6. Avoid tag selectors for common elements
-	7. Use class names as the right-most selector
+##### SMACSS:[Scalable and Modular Architecture for Css](https://smacss.com/)
+1. Base (element only selector)
+2. Layout (id selector + layout class)
+3. Module (class only selector + descendant selector)
+4. State (class selector)
+5. Theme (override below rules)
+6. Avoid tag selectors for common elements
+7. Use class names as the right-most selector
 
-- ACSS:[Atomic CSS](http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/)
-	1. use atomic style
-	2. don't use concrete classname
+##### ACSS:[Atomic CSS](http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/)
+1. use atomic style
+2. don't use concrete classname
 
-- BEM:[Block Element Modifier](http://bem.info)
-	1. use `blockname-modulename`
-	2. no abstract classname
+##### BEM:[Block Element Modifier](http://bem.info)
+1. use `blockname-modulename`
+2. no abstract classname
 	
 ---
 	
 ###会不会有更好的风格呢？
 
-- 期望：
-
-	1. 便于移植
-	2. css文件尽量精简
-	3. 可以应对频繁改动，而不致使复杂度增高
-	4. 和html,js解耦
-	5. 表示状态更清晰
+##### 期望：
+1. 便于移植
+2. css文件尽量精简
+3. 可以应对频繁改动，而不致使复杂度增高
+4. 和html,js解耦
+5. 表示状态更清晰
 	
 ---
 
