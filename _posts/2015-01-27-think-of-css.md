@@ -9,7 +9,6 @@ tags: [css,front-end,framework]
 ###css风格
 
 - OOCSS:[Object Oriented Css](https://github.com/stubbornella/oocss/wiki)
-
 	1. Separate structure and skin
 	2. Separate container and content
 	3. Avoid the descendent selector (i.e. don't use .sidebar h3)
@@ -17,7 +16,6 @@ tags: [css,front-end,framework]
 	5. Avoid attaching classes to elements in your stylesheet (i.e. don't do div.header or h1.title)
 
 - SMACSS:[Scalable and Modular Architecture for Css](https://smacss.com/)
-
 	1. Base (element only selector)
 	2. Layout (id selector + layout class)
 	3. Module (class only selector + descendant selector)
@@ -27,12 +25,10 @@ tags: [css,front-end,framework]
 	7. Use class names as the right-most selector
 
 - ACSS:[Atomic CSS](http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/)
-
 	1. use atomic style
 	2. don't use concrete classname
 
 - BEM:[Block Element Modifier](http://bem.info)
-
 	1. use `blockname-modulename`
 	2. no abstract classname
 	
