@@ -13,7 +13,7 @@ tags: ['javascript','react']
 
 再说回`React`，`React`的主旨就是*一切皆组件*，与之思想相同的还有`angular`和`polymer`等，甚至你也可以不用任何框架，通过自己的一套规范是实现这个思路。落实到实现层面，`React`还提供了令一套机制，就是*数据循环*，所谓*循环*，自然是只能有一个方向，即数据只能正向流动，而不能方向流动，这样的机制可以保证数据接口的统一，避免了数据被污染，在`React`的官方网站上有这样一个图，可以清晰的表示*数据循环*的方向：
 	
-![image](./../_postsimage/data-flow.png)
+![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/data-flow.png)
 
 
 
