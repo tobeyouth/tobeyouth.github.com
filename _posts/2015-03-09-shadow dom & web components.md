@@ -167,13 +167,13 @@ tags: [shadow dom,web components]
 			.ft {color:#333;}
 		</style>
 		<div class="hd">
-			<content selected=".hd"></content>
+			<content select=".hd"></content>
 		</div>
 		<div class="bd">
-			<content selected=".bd"></content>
+			<content select=".bd"></content>
 		</div>
 		<div class="ft">
-			<content selected=".ft"></content>
+			<content select=".ft"></content>
 		</div>
 	</template>
 	
@@ -188,8 +188,11 @@ tags: [shadow dom,web components]
 
 可以看到我们定义的三个样式只作用于了`shadow tree`中的节点，这就是**样式封装**。
 
-除此之外，在`shadow dom tree`中，我们还可以配置`root`节点的样式：
+#####向上修改
 
+除此之外，在`shadow dom tree`中，我们还可以配置`root`节点的样式：
+	
+	
 	<!-- 所谓的root -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
@@ -215,13 +218,13 @@ tags: [shadow dom,web components]
 			.ft {color:#333;}
 		</style>
 		<div class="hd">
-			<content selected=".hd"></content>
+			<content select=".hd"></content>
 		</div>
 		<div class="bd">
-			<content selected=".bd"></content>
+			<content select=".bd"></content>
 		</div>
 		<div class="ft">
-			<content selected=".ft"></content>
+			<content select=".ft"></content>
 		</div>
 	</template>
 	<template id="othertemplate">
@@ -232,15 +235,16 @@ tags: [shadow dom,web components]
 			.hd {color:#999;}
 			.bd {color:#666;}
 			.ft {color:#333;}
+			::content .ft {color: blue;}
 		</style>
 		<div class="hd">
-			<content selected=".hd"></content>
+			<content select=".hd"></content>
 		</div>
 		<div class="bd">
-			<content selected=".bd"></content>
+			<content select=".bd"></content>
 		</div>
 		<div class="ft">
-			<content selected=".ft"></content>
+			<content select=".ft"></content>
 		</div>
 	</template>
 	
@@ -257,7 +261,98 @@ tags: [shadow dom,web components]
 
 可以通过`:host`来选中`root`节点，并且可以通过`:host(selecor)`的形式选择不同类型的`root`节点。
 
+另外，也可以通过`::content`方法来选中`<content>`中的元素，并为其定制样式。
+
+
+既然`shadow dom`可以改变`root`元素的样式，那么会不会出现`shadow dom`覆盖了页面中`root`元素的样式的情况呢？
+
+答案是不大可能，再来看代码：
+	
+	<style>
+		.root {border:3px solid #6ff;}
+	</style>
+	<!-- 所谓的root -->
+	<div class="root" id="root">
+		<div class="hd">I'm Root hd</div>
+		<div class="bd">I'm Root bd</div>
+		<div class="ft">I'm Root ft</div>
+	</div>
+	<!-- shadow dom 的结构 -->
+	<template id="template">
+		<style>
+			.hd {color:#999;}
+			.bd {color:#666;}
+			.ft {color:#333;}
+		</style>
+		<div class="hd">
+			<content select=".hd"></content>
+		</div>
+		<div class="bd">
+			<content select=".bd"></content>
+		</div>
+		<div class="ft">
+			<content select=".ft"></content>
+		</div>
+	</template>
+	
+	<script type="text/javascript">
+		var root = document.querySelector('#root').createShadowRoot();
+		var template = document.querySelector('#template');
+		root.appendChild(template.content);
+	</script>
+
+![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-7.png)
+
+在外部定义的样式，优先级要高于在`shadow dom`中对`root`元素定义的样式。所以级别不太可能会发生`shadow dom`中的样式覆盖了页面本身设置的样式的情况。
+
 #####突破封装
+
+上面刚说了**封装样式**，这里再来说说如何突破封装的样式。
+
+在真实环境中，对样式的要求基本会千奇百怪，所以留出一条可以在外部定义`shadow dom`样式的途径还是很有必要的。
+
+	<style>
+		.root {border:3px solid #6ff;}
+		.root::shadow .hd {color:#f00;}
+	</style>
+	<!-- 所谓的root -->
+	<div class="root" id="root">
+		<div class="hd">I'm Root hd</div>
+		<div class="bd">I'm Root bd</div>
+		<div class="ft">I'm Root ft</div>
+	</div>
+	<!-- shadow dom 的结构 -->
+	<template id="template">
+		<style>
+			:host {padding:3px;display: inline-block;}
+			.hd {color:#999;}
+			.bd {color:#666;}
+			.ft {color:#333;}
+		</style>
+		<div class="hd">
+			<content select=".hd"></content>
+		</div>
+		<div class="bd">
+			<content select=".bd"></content>
+		</div>
+		<div class="ft">
+			<content select=".ft"></content>
+		</div>
+	</template>
+	
+	<script type="text/javascript">
+		var root = document.querySelector('#root').createShadowRoot();
+		var template = document.querySelector('#template');
+		root.appendChild(template.content);
+	</script>
+	
+![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-8.png)
+
+使用`::shadow`这个虚拟类就可以定位到`shadow dom`，从而定义`shadow dom`的样式。
+除此之外，还可以使用`/deep/`这个分隔符来定义`shadow dom`中的样式。与`::shadow`不同的是，`/deep/`可以递归的定义该`root`下面所有的`shadow dom` —— 也就是说，如果存在`shadow dom`嵌套的情况，那么`::shadow`只能定义当前`root`节点下的一级`shadow dom`，而使用`/deep/`则可以定义该节点下面的所有的`shadow dom`。
+
+除了以上两种方法之外，还可以通过**定义css变量**的方法来实现突破封锁的目的。所谓css变量，就是在外部定义一些样式(类似less变量)，然后在`shadow dom`中引用。
+
 
 
 

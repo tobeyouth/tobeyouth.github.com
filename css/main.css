@@ -129,6 +129,7 @@ a:visited { color: #a0a; }
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4em;
+  white-space: pre-line;
 }
 
 .post ul, .post ol {
