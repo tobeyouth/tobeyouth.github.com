@@ -64,11 +64,11 @@ tags: [shadow dom,web components]
 
 #####定义内容
 
-`shadow dom`遵循`dom tree`的结构，根节点被称为`root`，`shadow dom`的内容会被挂载到定义的`root`下，并且对外公开的也只用`root`而已（也就是说从页面层级上，是获取不到这个`shadow dom tree`的，只能获取到所挂载的`root`节点）。
+`shadow dom`遵循`dom tree`的结构，根节点被称为`host`，`shadow dom`的内容会被挂载到定义的`host`下，并且对外公开的也只用`host`而已（也就是说从页面层级上，是获取不到这个`shadow dom tree`的，只能获取到所挂载的`host`节点）。
 
 直接看代码：
 
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">I'm Root</div>
 	
 	<!-- shadow dom 的结构 -->
@@ -86,25 +86,25 @@ tags: [shadow dom,web components]
 		root.appendChild(template.content);
 	</script>
 	
-以上代码就会见简单的生成一个`shadow dom`，并插入到`root`节点中，可以把代码复制到页面里，看看会发生什么：
+以上代码将会简单的生成一个`shadow dom`，并插入到`host`节点所创建的`root`中，可以把代码复制到页面里，看看会发生什么：
 
 ![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-2.png)
 
-我们在`<content>`标签里写的内容并没有被显示，显示的是我们在`root`元素中写入的`textContent`;
+我们在`<content>`标签里写的内容并没有被显示，显示的是我们在`root`元素中写入的`textContent`;我们的这个`<content>`元素被称作**插入点(insertion points)**，这个将对应的内容插入到`<content>`的过程叫做**distribute**。
 
-我们再来写句js，改变一下`root`中元素中的内容：
+我们再来写句js，改变一下`host`中元素中的内容：
 
 	document.querySelector('#root').textContent = 'Changed name';
 
 ![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-3.png)
 
-这时我们发现，显示中的`<content>`改变了，也就是说**可以通过改变root元素的textContent改变shadow dom中定义的content部分**。
+这时我们发现，显示中的`<content>`改变了，也就是说**可以通过改变host元素的textContent改变shadow dom中定义的content部分**。
 
 但是真正的开发时，情况不会这么简单，如何定义多个`<content>`呢？
 
 继续看：
 
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
 		<div class="bd">I'm Root bd</div>
@@ -144,7 +144,7 @@ tags: [shadow dom,web components]
 
 下面来看代码：
 
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
 		<div class="bd">I'm Root bd</div>
@@ -190,17 +190,17 @@ tags: [shadow dom,web components]
 
 #####向上修改
 
-除此之外，在`shadow dom tree`中，我们还可以配置`root`节点的样式：
+除此之外，在`shadow dom tree`中，我们还可以配置`host`节点(也就是`root`所在的节点)的样式：
 	
 	
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
 		<div class="bd">I'm Root bd</div>
 		<div class="ft">I'm Root ft</div>
 	</div>
 	
-	<!-- 另一个root -->
+	<!-- 另一个host -->
 	<section class="root" id="rootOther">
 		<div class="hd">I'm Other Root hd</div>
 		<div class="bd">I'm Other Root bd</div>
@@ -259,19 +259,19 @@ tags: [shadow dom,web components]
 
 ![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-6.png)
 
-可以通过`:host`来选中`root`节点，并且可以通过`:host(selecor)`的形式选择不同类型的`root`节点。
+可以通过`:host`来选中`host`节点，并且可以通过`:host(selecor)`的形式选择不同类型的`root`节点。
 
 另外，也可以通过`::content`方法来选中`<content>`中的元素，并为其定制样式。
 
 
-既然`shadow dom`可以改变`root`元素的样式，那么会不会出现`shadow dom`覆盖了页面中`root`元素的样式的情况呢？
+既然`shadow dom`可以改变`root`元素的样式，那么会不会出现`shadow dom`覆盖了页面中`host`元素的样式的情况呢？
 
 答案是不大可能，再来看代码：
 	
 	<style>
 		.root {border:3px solid #6ff;}
 	</style>
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
 		<div class="bd">I'm Root bd</div>
@@ -303,7 +303,7 @@ tags: [shadow dom,web components]
 
 ![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-7.png)
 
-在外部定义的样式，优先级要高于在`shadow dom`中对`root`元素定义的样式。所以级别不太可能会发生`shadow dom`中的样式覆盖了页面本身设置的样式的情况。
+在外部定义的样式，优先级要高于在`shadow dom`中对`host`元素定义的样式。所以级别不太可能会发生`shadow dom`中的样式覆盖了页面本身设置的样式的情况。
 
 #####突破封装
 
@@ -312,10 +312,14 @@ tags: [shadow dom,web components]
 在真实环境中，对样式的要求基本会千奇百怪，所以留出一条可以在外部定义`shadow dom`样式的途径还是很有必要的。
 
 	<style>
-		.root {border:3px solid #6ff;}
+		.root {
+			border:3px solid #6ff;
+			--ft-color: green;
+		}
 		.root::shadow .hd {color:#f00;}
+		.root /deep/ .bd {color: #8cc;}
 	</style>
-	<!-- 所谓的root -->
+	<!-- 所谓的host -->
 	<div class="root" id="root">
 		<div class="hd">I'm Root hd</div>
 		<div class="bd">I'm Root bd</div>
@@ -349,11 +353,15 @@ tags: [shadow dom,web components]
 ![image](https://raw.githubusercontent.com/tobeyouth/tobeyouth.github.com/master/_postsimage/webcomponents-8.png)
 
 使用`::shadow`这个虚拟类就可以定位到`shadow dom`，从而定义`shadow dom`的样式。
-除此之外，还可以使用`/deep/`这个分隔符来定义`shadow dom`中的样式。与`::shadow`不同的是，`/deep/`可以递归的定义该`root`下面所有的`shadow dom` —— 也就是说，如果存在`shadow dom`嵌套的情况，那么`::shadow`只能定义当前`root`节点下的一级`shadow dom`，而使用`/deep/`则可以定义该节点下面的所有的`shadow dom`。
+除此之外，还可以使用`/deep/`这个分隔符来定义`shadow dom`中的样式。与`::shadow`不同的是，`/deep/`可以递归的定义该`root`下面所有的`shadow dom` —— 也就是说，如果存在`shadow dom`嵌套的情况，那么`::shadow`只能定义当前`root`下的一级`shadow dom`，而使用`/deep/`则可以定义该节点下面的所有的`shadow dom`。
 
 除了以上两种方法之外，还可以通过**定义css变量**的方法来实现突破封锁的目的。所谓css变量，就是在外部定义一些样式(类似less变量)，然后在`shadow dom`中引用。
 
 
 
+###结语
 
+写了这么多，其实大部分是关于`shadow dom`中的结构和样式的部分。
+
+下一篇将着重说一下`shadow dom`中的一些交互方面的东西。
 
