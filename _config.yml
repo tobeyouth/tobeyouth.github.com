@@ -1,3 +1,4 @@
 name: tobeyouth
 markdown: kramdown
-pygments: true
+permalink: pretty
+highlighter: rouge
