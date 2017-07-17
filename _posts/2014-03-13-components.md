@@ -69,14 +69,14 @@ tags: [javascript,components]
 大致的思路是``结构绑定交互``，有点类似于``flex``的形式。
 
 看一段代码：AngularJs
-
+```
     		<div ng-controller="TodoCtrl">
-      			<span>{{remaining()}} of {{todos.length}} remaining</span>
+      			<span>{{ remaining }} of {{ todos.length  }} remaining</span>
       			[ <a href="" ng-click="archive()">archive</a> ]
       			<ul class="unstyled">
         			<li ng-repeat="todo in todos">
           				<input type="checkbox" ng-model="todo.done">
-          				<span class="done-{{todo.done}}">{{todo.text}}</span>
+          				<span class="done-{{todo.done}}">{{ todo.text  }}</span>
         			</li>
       			</ul>
       			<form ng-submit="addTodo()">
@@ -112,11 +112,10 @@ tags: [javascript,components]
     			});
   			};
 		}
-	
-	
+```
 
 再看一段代码：React
-
+```
 		/** @jsx React.DOM */
 		var TodoList = React.createClass({
   			render: function() {
@@ -153,9 +152,11 @@ tags: [javascript,components]
   		}
 	});
 	React.renderComponent(<TodoApp />, mountNode);
+```
 
 最后再看一段更神奇的代码：DarkDom
-	
+
+```	
 		<x-postlist source-selector=".src-postlist">
   			<x-hd>Posts</x-hd>
   			<x-ft>Total:<span>3</span></x-ft>
@@ -179,8 +180,7 @@ tags: [javascript,components]
 		</x-postlist>
 		
 		// js代码太长了，就不贴了
-
-
+```
 
 
 

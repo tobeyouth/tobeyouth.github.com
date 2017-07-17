@@ -1,4 +1,50 @@
+# main text of home
 name: tobeyouth
+bio: A Man
+
+# if it's an external image, update below for true
+# better with square images
+external-image: false
+picture: assets/images/profile.jpeg
+
+# If you want to include your resume, set to true
+# and specify source (external or local).
+resume: true
+resume-external: true
+
+
+url: https://tobeyouth.github.io
+
+
+# social
+facebook: myfacebook
+twitter: mytwitter
+github: mygithub
+email: tobeyouth@gmail.com
+
+# normal = 560px / large = 810px
+width: normal
+
+projects: true
+about: true
+blog: true
+read-time: true
+show-tags: true
+related: true
+post-advance-links: [blog]
+show-author: true
+animation: true
+
+
+gems:
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+jekyll-mentions:
+    base_url: https://github.com
+
 markdown: kramdown
 permalink: pretty
 highlighter: rouge

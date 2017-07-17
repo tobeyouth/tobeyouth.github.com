@@ -1,43 +1,50 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<html lang="en">
+<head>
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <meta name=description content="{{ site.bio }}">
+    <meta name=author content="{{ site.name }}">
 
-    </head>
-    <body>
+    {% seo %}
+    
+    {% include favicon.html %}
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-          </div>
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
 
-          {{ content }}
+    <style>
+    {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+    {{ scss_sheet | scssify }}
+    </style>
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                tobeyouth<br />
-                Who are you?<br />
-                tobeyouth@gmail.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/tobeyouth">github.com/tobeyouth</a><br />
-                <a href="https://twitter.com/tobeyouth">twitter.com/tobeyouth</a><br />
-              </p>
-            </div>
-          </div>
+</head>
+<body>
+
+    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+        {% if page.tag %}
+            <div class="post">
+        {% else %}
+            {% if showHeader != true %}
+                <div class="page {{ page.title | downcase }}">
+            {% else %}
+                <div class="{{ page.title | downcase }}">
+            {% endif %}
+        {% endif %}
+
+            {{ content }}
         </div>
+    </div>
 
-    </body>
+    {% include icons.html %}
+
+    {% include analytics-google.html %}
+
+</body>
 </html>
