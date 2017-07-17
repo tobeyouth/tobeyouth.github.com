@@ -2,7 +2,7 @@
 layout: post
 title: "也谈QA"
 description: ""
-category: 
+category: blog
 tags: [qa,bug]
 ---
 

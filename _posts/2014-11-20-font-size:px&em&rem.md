@@ -3,6 +3,7 @@ layout: post
 title: "font-size:px&amp;em&amp;rem"
 modified: 2014-11-20 16:00:10 +0800
 tags: [css]
+category: blog
 ---
 
 在前端开发的过程中，对于`font-size`这个属性，我们最常用的单位值就是`px`了。但是对比一些国外的大站，经常会发现他们的`font-size`单位很少用`px`，大部分都使用`em`，还有一部分使用`rem`。

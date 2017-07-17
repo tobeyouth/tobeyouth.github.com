@@ -2,7 +2,7 @@
 layout: post
 title: "fe at international"
 description: ""
-category: 
+category: blog
 tags: [international,国际化]
 ---
 

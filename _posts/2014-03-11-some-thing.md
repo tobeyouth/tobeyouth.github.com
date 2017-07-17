@@ -2,7 +2,7 @@
 layout: post
 title: "杂感"
 description: ""
-category: 
+category: blog
 tags: [互联网从业人员的自我修养,创业,随便聊聊]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "shadow dom & web components(2)"
 modified: 2015-03-09 17:56:04 +0800
 tags: [shadow dom,web components]
+category: blog
 ---
 
 这里主要补充一下上一篇日志没有讲到的地方。

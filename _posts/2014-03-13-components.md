@@ -2,7 +2,7 @@
 layout: post
 title: "Why components?What is components?"
 description: ""
-category: 
+category: blog
 tags: [javascript,components]
 ---
 ----

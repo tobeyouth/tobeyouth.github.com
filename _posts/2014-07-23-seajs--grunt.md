@@ -2,7 +2,7 @@
 layout: post
 title: "seajs & grunt"
 description: ""
-category: 
+category: blog
 tags: [seajs,grunt,javascript]
 ---
 

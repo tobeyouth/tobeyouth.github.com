@@ -2,7 +2,7 @@
 layout: post
 title: "XML Schema"
 description: ""
-category: 
+category: blog
 tags: ['XML','数据']
 ---
 

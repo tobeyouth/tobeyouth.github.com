@@ -3,6 +3,7 @@ layout: post
 title: "strlen和mb_strlen"
 modified: 2014-08-21 12:13:48 +0800
 tags: [php]
+category: blog
 ---
 最近在开发中碰到一个有趣的问题，在使用`strlen`这个函数时，针对泰语环境，这个函数得出的结果总是字符串实际长度的3倍。
 

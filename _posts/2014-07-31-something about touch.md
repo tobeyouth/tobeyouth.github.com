@@ -3,7 +3,7 @@ layout: post
 title: "something about touch"
 modified: 2014-07-31 11:12:20 +0800
 tags: [touch,javascript]
-
+category: blog
 ---
 
 在移动前端开发的过程中，我们碰到的最多也是最头痛的问题就是关于`click`和`touch`带来的一系列交互问题。

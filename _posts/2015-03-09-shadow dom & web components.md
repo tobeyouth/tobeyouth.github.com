@@ -3,6 +3,7 @@ layout: post
 title: "shadow dom &amp; web components"
 modified: 2015-03-09 13:20:09 +0800
 tags: [shadow dom,web components]
+category: blog
 ---
 ###what is web components
 

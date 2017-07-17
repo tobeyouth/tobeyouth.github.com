@@ -3,6 +3,7 @@ layout: post
 title: "prototype And \_\_proto\_\_ in javascript"
 modified: 2015-01-30 10:39:03 +0800
 tags: [javascript]
+category: blog
 ---
 
 昨天在知乎上看到一个问题很有意思：[javascript一个函数实例有prototype属性吗?](http://www.zhihu.com/question/27862093)。题目大意如下：

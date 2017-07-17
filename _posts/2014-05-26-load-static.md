@@ -2,7 +2,7 @@
 layout: post
 title: "加载静态资源的几种方式"
 description: "how to get html,css,js,image ?"
-category: 
+category: blog
 tags: [html,css,js,image,speed]
 ---
 

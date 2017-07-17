@@ -3,6 +3,7 @@ layout: post
 title: "http:200(from-cache)&amp;http:304"
 modified: 2015-03-05 11:21:39 +0800
 tags: [http,cache]
+category: blog
 ---
 
 ####200 (from-cache) vs 304

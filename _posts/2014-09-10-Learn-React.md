@@ -3,6 +3,7 @@ layout: post
 title: "Learn React"
 modified: 2014-09-10 17:46:00 +0800
 tags: ['javascript','react']
+category: blog
 ---
 
 `React`是*facebook*开源的一个组件化框架。与众不同采用了`jsx`方式作为组件的组成方式。

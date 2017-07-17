@@ -2,7 +2,7 @@
 layout: post
 title: "hello world!"
 description: ""
-category: 
+category: blog
 tags: []
 ---
 ---

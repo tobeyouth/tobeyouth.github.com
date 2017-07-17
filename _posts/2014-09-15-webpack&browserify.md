@@ -3,6 +3,7 @@ layout: post
 title: "webpack，browserify简介"
 modified: 2014-09-15 14:40:07 +0800
 tags: [webpack,browserify,nodejs,javascript]
+category: blog
 ---
 
 

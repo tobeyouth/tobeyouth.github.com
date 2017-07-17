@@ -3,6 +3,7 @@ layout: post
 title: "use reactjs"
 modified: 2014-11-21 13:54:04 +0800
 tags: [javascript,react,gulp,browserify]
+category: blog
 ---
 
 最近在一个项目中使用了`React`作为主力开发框架，写篇总结，说说自己的感受和踩过的坑。

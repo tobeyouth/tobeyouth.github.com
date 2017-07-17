@@ -3,6 +3,7 @@ layout: post
 title: "react benchmarks"
 modified: 2017-05-16 15:12:35 +0800
 tags: [react, benchmarks]
+category: blog
 ---
 
 简单的说一下如何在 react 开发中，进行 benchmark，并且会简单的说一些可以提升性能的小技巧。

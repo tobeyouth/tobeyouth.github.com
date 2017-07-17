@@ -3,6 +3,7 @@ layout: post
 title: "performance in javascript"
 modified: 2014-08-18 17:07:27 +0800
 tags: [javascript,navigator]
+category: blog
 ---
 
 在web项目中，页面的展现速度是大家一直关注的一个要点。在有关页面展现速度的统计中，我们通常会统计这样一些时间点：
