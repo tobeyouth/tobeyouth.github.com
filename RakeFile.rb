@@ -1,4 +1,5 @@
 require "rubygems"
+require "html-proofer"
 # require "stringex"
 
 ## -- Config -- ##
