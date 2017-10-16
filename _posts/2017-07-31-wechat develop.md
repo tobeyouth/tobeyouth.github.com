@@ -3,6 +3,7 @@ layout: post
 title: "wechat develop"
 modified: 2017-07-31 12:10:06 +0800
 tags: [wechat]
+category: blog
 ---
 
 总结一些微信相关开发踩过的坑

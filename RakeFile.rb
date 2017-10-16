@@ -34,6 +34,7 @@ task :post, :title do |t, args|
     post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
     post.puts "modified: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
     post.puts "tags: [#{tags}]"
+    post.puts "category: blog"
     post.puts "---"
   end
 end

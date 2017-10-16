@@ -2,6 +2,7 @@
 layout: post
 title: "redux-saga"
 modified: 2017-08-23 16:00:12 +0800
+category: blog
 tags: [redux, redux-saga, javascript]
 ---
 
