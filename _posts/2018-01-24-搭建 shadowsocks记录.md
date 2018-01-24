@@ -94,3 +94,9 @@ windows, mac, android, ios 上都有相应的开源客户端，可以自行下�
 - 保存、链接
 
 等成功链接之后，就可以正常访问 google 和 facebook 等并不存在的网站啦！
+
+### 其他
+一些相关资源和教程的地址
+- [shadowsocks.be](https://shadowsocks.be/)
+- [shadowsocks in github](https://github.com/shadowsocks)
+- [轻松在 VPS 搭建 Shadowsocks 翻墙](https://www.diycode.cc/topics/738)
