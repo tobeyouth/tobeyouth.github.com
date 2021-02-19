@@ -143,8 +143,3 @@ docker run -i -t -d -v ${CWD}/app:/var/www/app -p ${CONTAINER_PORT}:${VIEW_PORT}
 docker container ls -a
 ```
 来查看所有的 container。
-
-
-### supervisord
-
-
